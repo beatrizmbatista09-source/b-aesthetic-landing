@@ -1256,3 +1256,73 @@
     transition: none;
   }
 }
+.plasma-page .shell,
+.plasma-hero-grid {
+  width: min(1360px, calc(100% - clamp(40px, 8vw, 120px)));
+}
+.plasma-nav a {
+  font-size: 13px;
+}
+.plasma-page .salon-button {
+  min-height: 48px;
+  padding: 14px 24px;
+  font-size: 12px;
+}
+.plasma-hero {
+  min-height: 680px;
+}
+.plasma-hero-grid {
+  min-height: 600px;
+}
+.plasma-hero-copy {
+  max-width: 740px;
+}
+.plasma-hero h1 {
+  font-size: clamp(58px, 6.2vw, 90px);
+}
+.plasma-lead {
+  max-width: 460px;
+  font-size: 16px;
+}
+.plasma-hero-note {
+  font-size: 12px;
+}
+.plasma-section-heading > p,
+.plasma-treatment-benefit {
+  font-size: 14px;
+}
+@media (max-width: 900px) {
+  .plasma-hero {
+    min-height: 640px;
+  }
+  .plasma-hero-grid {
+    min-height: 560px;
+  }
+}
+@media (max-width: 640px) {
+  .plasma-nav a {
+    font-size: 10px;
+  }
+  .plasma-page .salon-button {
+    min-height: 40px;
+    padding: 10px 13px;
+    font-size: 10px;
+  }
+  .plasma-hero {
+    min-height: 600px;
+  }
+  .plasma-hero-grid {
+    min-height: auto;
+  }
+  .plasma-hero h1 {
+    font-size: clamp(44px, 10vw, 56px);
+  }
+  .plasma-lead,
+  .plasma-section-heading > p,
+  .plasma-treatment-benefit {
+    font-size: 13px;
+  }
+  .plasma-hero-note {
+    font-size: 10px;
+  }
+}
