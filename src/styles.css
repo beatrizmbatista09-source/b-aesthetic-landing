@@ -1,0 +1,1258 @@
+:root {
+  --font-sans: "Manrope", sans-serif;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --background: oklch(0.982 0.009 85);
+  --foreground: oklch(0.32 0.025 58);
+  --primary: oklch(0.43 0.046 126);
+  --primary-foreground: oklch(0.99 0.009 85);
+  --secondary: oklch(0.952 0.018 84);
+  --secondary-foreground: var(--foreground);
+  --muted: oklch(0.952 0.018 84);
+  --muted-foreground: oklch(0.53 0.025 62);
+  --accent: oklch(0.93 0.023 105);
+  --accent-foreground: var(--primary);
+  --card: oklch(0.997 0.003 85);
+  --border: oklch(0.88 0.022 80);
+  --gold: oklch(0.59 0.072 78);
+  --olive-soft: oklch(0.94 0.019 117);
+  --shadow-header: 0 4px 24px oklch(0.32 0.025 58 / 0.04);
+}
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+  }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: 14px;
+  }
+  h1,
+  h2,
+  h3,
+  p {
+    margin: 0;
+  }
+  h1,
+  h2,
+  h3 {
+    letter-spacing: 0;
+  }
+  ::selection {
+    background: var(--accent);
+    color: var(--primary);
+  }
+}
+.shell {
+  width: min(1240px, calc(100% - 96px));
+  margin-inline: auto;
+}
+.eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.plasma-page {
+  --font-sans: "Manrope", sans-serif;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --background: oklch(0.985 0.009 78);
+  --foreground: oklch(0.3 0.026 58);
+  --primary: oklch(0.48 0.082 77);
+  --primary-foreground: oklch(0.99 0.008 78);
+  --secondary: oklch(0.95 0.019 78);
+  --secondary-foreground: var(--foreground);
+  --muted: oklch(0.95 0.019 78);
+  --muted-foreground: oklch(0.49 0.026 62);
+  --accent: oklch(0.92 0.028 78);
+  --accent-foreground: var(--primary);
+  --card: oklch(0.997 0.003 78);
+  --border: oklch(0.87 0.025 76);
+  --gold: oklch(0.62 0.093 76);
+  --olive-soft: oklch(0.94 0.023 78);
+  --shadow-header: 0 4px 24px oklch(0.34 0.035 60 / 0.06);
+  color: var(--foreground);
+  background: var(--background);
+}
+.plasma-page .eyebrow {
+  letter-spacing: 0.2em;
+}
+.plasma-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: var(--background);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-header);
+}
+.plasma-header-inner {
+  min-height: 88px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 30px;
+}
+.plasma-brand {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--primary);
+  text-decoration: none;
+}
+.plasma-brand-icon {
+  width: 25px;
+  height: 32px;
+  margin-bottom: 2px;
+}
+.plasma-brand-name {
+  font-family: var(--font-display);
+  font-size: 24px;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+}
+.plasma-brand-caption {
+  margin-top: 7px;
+  font-size: 5px;
+  font-weight: 700;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+}
+.plasma-nav {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+.plasma-nav a {
+  color: var(--muted-foreground);
+  font-size: 11px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.plasma-nav a:hover {
+  color: var(--primary);
+}
+.plasma-page .salon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 43px;
+  height: auto;
+  padding: 12px 21px;
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    border-color 0.2s;
+}
+.plasma-page .salon-button-solid {
+  border: 1px solid var(--primary);
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+.plasma-page .salon-button-solid:hover {
+  background: color-mix(in oklch, var(--primary) 90%, black);
+}
+.plasma-page .salon-button-outline {
+  border: 1px solid var(--border);
+  background: var(--background);
+  color: var(--foreground);
+}
+.plasma-page .salon-button-outline:hover {
+  background: var(--accent);
+}
+.plasma-page .salon-button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+.plasma-page .salon-button svg {
+  width: 15px;
+  height: 15px;
+}
+.plasma-hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: 65px 75px;
+  background: var(--background);
+}
+.plasma-hero::before {
+  position: absolute;
+  top: -230px;
+  right: -170px;
+  width: 680px;
+  height: 680px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+.plasma-hero-grid {
+  min-height: 515px;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 7%;
+}
+.plasma-hero-copy {
+  position: relative;
+  z-index: 1;
+  padding-block: 25px;
+}
+.plasma-hero h1,
+.plasma-section-heading h2,
+.plasma-method h2,
+.plasma-contact h2 {
+  margin-top: 18px;
+  font-family: var(--font-display);
+  font-size: clamp(51px, 6.2vw, 78px);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+}
+.plasma-hero h1 em,
+.plasma-section-heading h2 em,
+.plasma-method h2 em,
+.plasma-contact h2 em {
+  color: var(--primary);
+  font-weight: 400;
+}
+.plasma-lead {
+  max-width: 380px;
+  margin-top: 25px;
+  color: var(--muted-foreground);
+  font-size: 13px;
+  line-height: 1.9;
+}
+.plasma-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+  margin-top: 28px;
+}
+.plasma-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--foreground);
+  border-bottom: 1px solid var(--gold);
+  padding-block: 8px;
+  font-size: 10px;
+  text-decoration: none;
+}
+.plasma-hero-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 42px;
+  color: var(--muted-foreground);
+  font-size: 10px;
+}
+.plasma-hero-note svg {
+  color: var(--gold);
+  stroke-width: 1.4;
+}
+.plasma-hero-art {
+  position: relative;
+  display: grid;
+  min-height: 455px;
+  place-items: center;
+  overflow: hidden;
+  background: var(--olive-soft);
+}
+.plasma-art-ring {
+  position: absolute;
+  aspect-ratio: 1;
+  border: 1px solid color-mix(in oklch, var(--primary) 23%, transparent);
+  border-radius: 50%;
+}
+.plasma-art-ring-outer {
+  width: min(80%, 390px);
+}
+.plasma-art-ring-inner {
+  width: min(62%, 300px);
+}
+.plasma-art-profile {
+  z-index: 1;
+  width: 160px;
+  height: 230px;
+  color: var(--primary);
+  transform: translateY(-12px);
+}
+.plasma-art-label {
+  position: absolute;
+  bottom: 28px;
+  left: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--muted-foreground);
+}
+.plasma-art-label span,
+.plasma-contact-card-index {
+  font-size: 8px;
+  letter-spacing: 0.2em;
+}
+.plasma-art-label strong {
+  color: var(--foreground);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 400;
+}
+.plasma-art-sparkle {
+  position: absolute;
+  top: 16%;
+  right: 17%;
+  color: var(--gold);
+  font-size: 29px;
+}
+.plasma-scroll-cue {
+  position: absolute;
+  right: max(48px, calc((100vw - 1240px) / 2));
+  bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--muted-foreground);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.plasma-scroll-cue svg {
+  color: var(--gold);
+}
+.plasma-treatments {
+  padding-block: 95px 88px;
+  background: var(--secondary);
+}
+.plasma-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 35px;
+  margin-bottom: 46px;
+}
+.plasma-section-heading h2,
+.plasma-method h2,
+.plasma-contact h2 {
+  font-size: clamp(40px, 4.4vw, 56px);
+}
+.plasma-section-heading > p {
+  max-width: 325px;
+  padding-bottom: 5px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+  line-height: 1.9;
+}
+.plasma-treatment-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.plasma-treatment-card {
+  min-height: 275px;
+  display: flex;
+  flex-direction: column;
+  padding: 27px 28px 22px;
+  border: 1px solid var(--border);
+  background: var(--background);
+}
+.plasma-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+.plasma-number {
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-size: 27px;
+}
+.plasma-card-heading h3 {
+  font-family: var(--font-display);
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1;
+}
+.plasma-card-heading p {
+  margin-top: 6px;
+  color: var(--muted-foreground);
+  font-size: 9px;
+}
+.plasma-price-list {
+  margin: 0;
+  padding: 5px 0 0;
+  list-style: none;
+}
+.plasma-price-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.plasma-treatment-name {
+  font-family: var(--font-display);
+  font-size: 15px;
+  line-height: 1.3;
+}
+.plasma-price-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 3px;
+  white-space: nowrap;
+}
+.plasma-price-detail strong {
+  color: var(--primary);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 500;
+}
+.plasma-price-detail small {
+  color: var(--muted-foreground);
+  font-size: 8px;
+}
+.plasma-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: start;
+  margin-top: auto;
+  padding-top: 17px;
+  color: var(--primary);
+  font-size: 9px;
+  text-decoration: none;
+}
+.plasma-card-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.plasma-price-note {
+  margin-top: 23px;
+  color: var(--muted-foreground);
+  font-size: 9px;
+  line-height: 1.7;
+}
+.plasma-method {
+  padding-block: 88px;
+  background: var(--olive-soft);
+}
+.plasma-method-inner {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  align-items: center;
+  gap: 10%;
+}
+.plasma-method-aside {
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid color-mix(in oklch, var(--primary) 25%, transparent);
+  color: var(--primary);
+}
+.plasma-method-mark {
+  font-family: var(--font-display);
+  font-size: 100px;
+  line-height: 0.8;
+}
+.plasma-method-aside > span:last-child {
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+}
+.plasma-method-copy {
+  max-width: 580px;
+}
+.plasma-method-copy > p:not(.eyebrow) {
+  max-width: 450px;
+  margin-top: 20px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+  line-height: 1.9;
+}
+.plasma-method-copy .salon-button {
+  margin-top: 24px;
+}
+.plasma-contact {
+  padding-block: 90px;
+}
+.plasma-contact-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 10%;
+}
+.plasma-contact-intro {
+  max-width: 370px;
+  margin-top: 19px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+  line-height: 1.8;
+}
+.plasma-contact-details {
+  display: grid;
+  gap: 14px;
+  margin-top: 27px;
+}
+.plasma-contact-details p,
+.plasma-contact-details a {
+  display: flex;
+  align-items: start;
+  gap: 11px;
+  color: var(--muted-foreground);
+  font-size: 10px;
+  line-height: 1.8;
+  text-decoration: none;
+}
+.plasma-contact-details svg {
+  flex: 0 0 17px;
+  margin-top: 2px;
+  color: var(--gold);
+  stroke-width: 1.5;
+}
+.plasma-contact-details a:hover {
+  color: var(--primary);
+}
+.plasma-contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+  margin-top: 25px;
+}
+.plasma-contact-card {
+  position: relative;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--olive-soft);
+  color: var(--primary);
+}
+.plasma-contact-card::before,
+.plasma-contact-card::after {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border: 1px solid color-mix(in oklch, var(--primary) 20%, transparent);
+  border-radius: 50%;
+  content: "";
+}
+.plasma-contact-card::after {
+  width: 310px;
+  height: 310px;
+}
+.plasma-contact-card-index {
+  position: absolute;
+  top: 23px;
+  left: 25px;
+}
+.plasma-contact-card .plasma-brand {
+  z-index: 1;
+  transform: scale(1.35);
+}
+.plasma-contact-card .plasma-brand-icon {
+  width: 39px;
+  height: 49px;
+}
+.plasma-contact-card .plasma-brand-name {
+  font-size: 32px;
+}
+.plasma-contact-card .plasma-brand-caption {
+  font-size: 6px;
+}
+.plasma-contact-card-line {
+  z-index: 1;
+  width: 36px;
+  height: 1px;
+  margin-top: 26px;
+  background: var(--gold);
+}
+.plasma-contact-card > p {
+  z-index: 1;
+  margin-top: 12px;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+}
+.plasma-contact-card > a:last-child {
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 25px;
+  color: var(--primary);
+  font-size: 9px;
+  text-decoration: none;
+}
+.plasma-footer {
+  padding-block: 23px;
+  border-top: 1px solid var(--border);
+}
+.plasma-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.plasma-footer .plasma-brand {
+  transform: scale(0.8);
+  transform-origin: left center;
+}
+.plasma-footer-inner > p {
+  color: var(--muted-foreground);
+  font-size: 9px;
+}
+.plasma-footer-inner > a {
+  color: var(--muted-foreground);
+}
+@media (max-width: 900px) {
+  .plasma-header-inner {
+    gap: 18px;
+  }
+  .plasma-nav {
+    gap: 18px;
+  }
+  .plasma-hero-grid {
+    min-height: 465px;
+    gap: 4%;
+  }
+  .plasma-hero-art {
+    min-height: 390px;
+  }
+  .plasma-treatment-card {
+    padding-inline: 21px;
+  }
+}
+@media (max-width: 640px) {
+  .plasma-header-inner {
+    min-height: 72px;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+  }
+  .plasma-brand-name {
+    font-size: 21px;
+  }
+  .plasma-brand-caption {
+    font-size: 4px;
+  }
+  .plasma-header-inner > .salon-button {
+    padding: 10px 14px;
+    font-size: 9px;
+  }
+  .plasma-nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 0 0 12px;
+  }
+  .plasma-nav a {
+    font-size: 9px;
+  }
+  .plasma-hero {
+    padding-block: 37px 52px;
+  }
+  .plasma-hero-grid {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .plasma-hero-copy {
+    padding-block: 8px 0;
+  }
+  .plasma-hero {
+    min-height: 600px;
+  }
+  .plasma-hero::after {
+    background:
+      linear-gradient(
+        90deg,
+        color-mix(in oklch, var(--background) 94%, transparent),
+        color-mix(in oklch, var(--background) 76%, transparent)
+      ),
+      linear-gradient(0deg, color-mix(in oklch, var(--background) 12%, transparent), transparent);
+  }
+  .plasma-hero-backdrop {
+    object-position: 62% center;
+  }
+  .plasma-hero h1 {
+    font-size: 56px;
+  }
+  .plasma-lead {
+    max-width: 320px;
+    font-size: 12px;
+  }
+  .plasma-hero-note {
+    margin-top: 25px;
+    font-size: 9px;
+  }
+  .plasma-hero-art {
+    min-height: 310px;
+  }
+  .plasma-art-profile {
+    width: 130px;
+    height: 190px;
+  }
+  .plasma-art-label {
+    bottom: 20px;
+    left: 20px;
+  }
+  .plasma-scroll-cue {
+    display: none;
+  }
+  .plasma-treatments {
+    padding-block: 60px;
+  }
+  .plasma-section-heading {
+    display: block;
+    margin-bottom: 28px;
+  }
+  .plasma-section-heading h2,
+  .plasma-method h2,
+  .plasma-contact h2 {
+    font-size: 42px;
+  }
+  .plasma-section-heading > p {
+    margin-top: 15px;
+  }
+  .plasma-treatment-grid {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+  .plasma-treatment-card {
+    min-height: 0;
+    padding: 21px 18px 18px;
+  }
+  .plasma-price-row {
+    gap: 10px;
+  }
+  .plasma-treatment-name {
+    font-size: 14px;
+  }
+  .plasma-price-detail strong {
+    font-size: 15px;
+  }
+  .plasma-method {
+    padding-block: 55px;
+  }
+  .plasma-method-inner {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .plasma-method-aside {
+    min-height: 190px;
+  }
+  .plasma-method-mark {
+    font-size: 76px;
+  }
+  .plasma-contact {
+    padding-block: 60px;
+  }
+  .plasma-contact-inner {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .plasma-contact-card {
+    min-height: 295px;
+  }
+  .plasma-footer-inner {
+    flex-wrap: wrap;
+  }
+  .plasma-footer-inner > p {
+    order: 3;
+    width: 100%;
+  }
+}
+.plasma-header {
+  overflow: visible;
+}
+.plasma-header-inner {
+  min-height: 104px;
+  padding-block: 8px;
+}
+.plasma-brand {
+  flex-shrink: 0;
+  padding-block: 5px;
+}
+.plasma-brand-icon {
+  width: 21px;
+  height: 25px;
+  margin-bottom: 3px;
+  overflow: visible;
+}
+.plasma-header-actions {
+  display: flex;
+  justify-self: end;
+  align-items: center;
+  gap: 15px;
+}
+.plasma-language {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--muted-foreground);
+  font-size: 9px;
+}
+.plasma-language button {
+  border: 0;
+  padding: 5px 2px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.plasma-language button[aria-pressed="true"] {
+  color: var(--primary);
+  font-weight: 700;
+}
+.plasma-hero-art {
+  isolation: isolate;
+  background: var(--olive-soft);
+}
+.plasma-hero-image,
+.plasma-hero-image-wash {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.plasma-hero-image {
+  z-index: -2;
+  object-fit: cover;
+  object-position: 52% 42%;
+  filter: saturate(0.72);
+}
+.plasma-hero-image-wash {
+  z-index: -1;
+  background: linear-gradient(
+    90deg,
+    color-mix(in oklch, var(--olive-soft) 46%, transparent),
+    color-mix(in oklch, var(--olive-soft) 12%, transparent)
+  );
+}
+.plasma-hero-art .plasma-art-ring {
+  border-color: color-mix(in oklch, white 65%, transparent);
+}
+.plasma-hero-art .plasma-art-label {
+  padding: 10px 13px;
+  background: color-mix(in oklch, var(--background) 90%, transparent);
+}
+.plasma-treatment-card {
+  overflow: hidden;
+}
+.plasma-treatment-image {
+  display: block;
+  width: calc(100% + 56px);
+  height: 145px;
+  flex: 0 0 auto;
+  margin: -27px -28px 20px;
+  object-fit: cover;
+  object-position: center 44%;
+  filter: saturate(0.75);
+}
+.plasma-testimonials {
+  padding-block: 85px;
+}
+.plasma-testimonials .plasma-section-heading {
+  margin-bottom: 25px;
+}
+.plasma-demo-note {
+  display: inline-flex;
+  margin-bottom: 21px;
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  color: var(--muted-foreground);
+  font-size: 8px;
+  letter-spacing: 0.14em;
+}
+.plasma-testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.plasma-testimonial {
+  min-height: 185px;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 21px 22px;
+  border: 1px solid var(--border);
+  background: var(--card);
+}
+.plasma-testimonial-number {
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-size: 20px;
+}
+.plasma-testimonial blockquote {
+  margin: 15px 0 20px;
+  font-family: var(--font-display);
+  font-size: 22px;
+  line-height: 1.3;
+}
+.plasma-testimonial figcaption {
+  margin-top: auto;
+  color: var(--muted-foreground);
+  font-size: 8px;
+}
+.plasma-map-wrap {
+  min-width: 0;
+  border: 1px solid var(--border);
+  background: var(--background);
+}
+.plasma-map {
+  display: block;
+  width: 100%;
+  height: 390px;
+  border: 0;
+  background: var(--secondary);
+}
+.plasma-map-caption {
+  display: flex;
+  min-height: 44px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 13px;
+  color: var(--muted-foreground);
+  font-size: 9px;
+}
+.plasma-map-caption span,
+.plasma-map-caption a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.plasma-map-caption span svg {
+  color: var(--gold);
+}
+.plasma-map-caption a {
+  color: var(--primary);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.plasma-whatsapp-float {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 50;
+  display: inline-flex;
+  min-height: 52px;
+  align-items: center;
+  gap: 9px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  box-shadow: 0 8px 24px oklch(0.34 0.035 60 / 0.2);
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+.plasma-whatsapp-float:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px oklch(0.34 0.035 60 / 0.26);
+}
+.plasma-whatsapp-float svg {
+  width: 21px;
+  height: 21px;
+}
+.plasma-header-inner {
+  min-height: 128px;
+}
+.plasma-brand {
+  width: 150px;
+  flex-shrink: 0;
+}
+.plasma-brand-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  mix-blend-mode: multiply;
+}
+.plasma-treatment-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+.plasma-treatment-card {
+  position: relative;
+  min-height: 0;
+  padding: 0 0 22px;
+  background: transparent;
+  border: 0;
+}
+.plasma-treatment-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1.1;
+  margin: 0 0 22px;
+  object-position: center;
+}
+.plasma-number {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+  padding: 8px 10px;
+  background: var(--background);
+  font-size: 14px;
+}
+.plasma-card-heading {
+  padding: 0;
+  border: 0;
+}
+.plasma-card-heading h3 {
+  font-size: 27px;
+  line-height: 1.1;
+}
+.plasma-treatment-benefit {
+  margin-top: 13px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+  line-height: 1.85;
+}
+.plasma-card-link {
+  margin-top: auto;
+  padding-top: 18px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+.plasma-method-inner {
+  grid-template-columns: 0.85fr 1.15fr;
+}
+.plasma-about-image {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  object-position: center 38%;
+}
+.plasma-method-copy > p:not(.eyebrow) + p {
+  margin-top: 14px;
+}
+.plasma-testimonial-carousel {
+  width: min(100%, 760px);
+  margin-inline: auto;
+}
+.plasma-testimonial {
+  min-height: 255px;
+  justify-content: center;
+  padding: 32px clamp(24px, 7vw, 75px);
+  background: var(--olive-soft);
+  border: 0;
+  text-align: center;
+}
+.plasma-testimonial-number {
+  font-size: 15px;
+  letter-spacing: 0.2em;
+}
+.plasma-testimonial blockquote {
+  max-width: 580px;
+  margin: 20px auto 25px;
+  font-size: clamp(25px, 4vw, 38px);
+}
+.plasma-testimonial figcaption {
+  color: var(--muted-foreground);
+  font-size: 9px;
+}
+.plasma-testimonial-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  margin-top: 19px;
+  color: var(--muted-foreground);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+}
+.plasma-testimonial-controls button {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--primary);
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.plasma-testimonial-controls button:hover {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+.plasma-footer .plasma-brand {
+  width: 105px;
+  transform: none;
+}
+.plasma-hero {
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  isolation: isolate;
+  background: var(--olive-soft);
+}
+.plasma-hero-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 65% 42%;
+}
+.plasma-hero::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(
+      90deg,
+      color-mix(in oklch, var(--background) 98%, transparent) 0%,
+      color-mix(in oklch, var(--background) 91%, transparent) 33%,
+      color-mix(in oklch, var(--background) 70%, transparent) 56%,
+      color-mix(in oklch, var(--background) 17%, transparent) 100%
+    ),
+    linear-gradient(0deg, color-mix(in oklch, var(--background) 24%, transparent), transparent 45%);
+  content: "";
+  pointer-events: none;
+}
+.plasma-hero-grid {
+  width: min(1240px, calc(100% - 96px));
+  min-height: 520px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+}
+.plasma-hero-copy {
+  max-width: 660px;
+  padding-block: 40px;
+}
+.plasma-hero-note {
+  color: var(--foreground);
+}
+.plasma-method-aside img {
+  width: min(90%, 280px);
+  height: auto;
+  mix-blend-mode: multiply;
+}
+@media (max-width: 900px) {
+  .plasma-header-inner {
+    min-height: 118px;
+    grid-template-columns: auto 1fr auto;
+    gap: 14px;
+  }
+  .plasma-treatment-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .plasma-hero-grid {
+    min-height: 490px;
+  }
+  .plasma-header-actions {
+    gap: 9px;
+  }
+  .plasma-nav {
+    gap: 14px;
+  }
+}
+@media (max-width: 640px) {
+  .plasma-header-inner {
+    min-height: 0;
+    grid-template-columns: auto 1fr auto;
+    padding: 6px 0 0;
+  }
+  .plasma-brand {
+    width: 104px;
+    padding-block: 0;
+  }
+  .plasma-brand-icon {
+    width: 19px;
+    height: 22px;
+  }
+  .plasma-header-actions {
+    gap: 7px;
+  }
+  .plasma-header-actions .salon-button {
+    min-height: 36px;
+    padding: 9px 11px;
+  }
+  .plasma-language {
+    gap: 3px;
+    font-size: 8px;
+  }
+  .plasma-nav {
+    padding-top: 3px;
+  }
+  .plasma-treatment-image {
+    width: 100%;
+    height: auto;
+    margin: 0 0 18px;
+  }
+  .plasma-testimonials {
+    padding-block: 58px;
+  }
+  .plasma-testimonial {
+    min-height: 210px;
+    padding-inline: 22px;
+  }
+  .plasma-map {
+    height: 310px;
+  }
+  .plasma-map-caption {
+    align-items: start;
+    font-size: 8px;
+  }
+  .plasma-whatsapp-float {
+    right: 14px;
+    bottom: 15px;
+    min-height: 48px;
+    padding-inline: 15px;
+  }
+  .plasma-nav a {
+    font-size: 8px;
+  }
+  .plasma-treatment-grid {
+    grid-template-columns: 1fr;
+  }
+  .plasma-treatment-card {
+    padding-bottom: 22px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .plasma-whatsapp-float {
+    transition: none;
+  }
+}
